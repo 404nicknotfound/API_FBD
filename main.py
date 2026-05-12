@@ -40,7 +40,7 @@ def get_comentarios(bar_id: int):
 def post_comentario(bar_id: int, datos: dict):
     datos['bar_id'] = bar_id
     datos['fecha']  = datetime.now().isoformat()
-    db["comentarios"].insert_one(datos)
+    db["Comentarios"].insert_one(datos)
     return {'mensaje': 'Comentario guardado'}
 
 @app.get('/bares/{bar_id}/eventos')
